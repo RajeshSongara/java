@@ -51,14 +51,12 @@ public class kkk {
         });
 
         WindowListener lister = new WindowAdapter() {
-            
-                 
-        
+
             public void windowClosing(WindowEvent e) {
                 f.dispose();
             }
         };
-        
+
         f.addWindowListener(lister);
     }
 }
