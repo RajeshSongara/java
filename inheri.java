@@ -1,5 +1,6 @@
-import java.awt.event.*;
+
 import java.awt.*;
+import java.awt.event.*;
 
 class A {
 
@@ -45,6 +46,18 @@ class C extends B {
         c1.add("MBA");
         c1.add("BCA");
         c1.add("BBA");
+        c1.add("B.Tech");
+        c1.add("M.Tech");
+        c1.add("PhD");
+        c1.add("Other");
+        c1.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                String selectedCourse = c1.getSelectedItem();
+                s_course(selectedCourse);
+                show();
+            }
+        });
 
         c1.setBounds(50, 100, 200, 30);
         f.add(c1);
