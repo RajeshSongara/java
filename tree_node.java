@@ -23,6 +23,7 @@ public class tree_node {
         ce.add(mca);
         ce.add(bca);
         ce.add(bsc);
+        
         JTree jt=new JTree(d);
         JScrollPane sp=new JScrollPane(jt);
         j.add(sp);
@@ -30,8 +31,6 @@ public class tree_node {
         j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         j.setVisible(true);
         j.setLayout(null);
-
-
     }
 
     public static void main(String[] args) {
