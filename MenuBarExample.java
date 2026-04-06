@@ -5,8 +5,8 @@ import javax.swing.*;
 public class MenuBarExample implements ActionListener {
 
     JMenuBar myBar;
-    JMenu file, help;   
-    JMenuItem open, exit, about, helpContent; 
+    JMenu file, help, home;   
+    JMenuItem open, exit, about, helpContent,cut,copy,paste; 
     JFrame f;
 
     MenuBarExample() {
@@ -21,6 +21,15 @@ public class MenuBarExample implements ActionListener {
         file.add(open);
         file.addSeparator();
         file.add(exit);
+
+        home = new JMenu("Home");
+        cut = new JMenuItem("Cut");
+        copy = new JMenuItem("Copy");
+        paste = new JMenuItem("Paste");
+        home.add(cut);
+        home.add(copy);
+        home.add(paste);
+        myBar.add(home);
 
 
         help = new JMenu("Help");
@@ -39,6 +48,10 @@ public class MenuBarExample implements ActionListener {
         exit.addActionListener(this);
         helpContent.addActionListener(this);
         about.addActionListener(this);
+        cut.addActionListener(this);
+        copy.addActionListener(this);
+        paste.addActionListener(this);
+        
 
         f.setJMenuBar(myBar);
 
@@ -61,6 +74,18 @@ public class MenuBarExample implements ActionListener {
         }
         else if (e.getSource() == about) {
             JOptionPane.showMessageDialog(f, "My Application v1.0\nDeveloped in Java Swing");
+        }
+        else if (e.getSource()==cut)
+        {
+            JOptionPane.showMessageDialog(f,"Cut action performed.\nUse Ctrl+X to cut.");
+        }
+        else if (e.getSource()==copy)
+        {
+            JOptionPane.showMessageDialog(f,"Copy action performed.\nUse Ctrl+C to copy.");
+        }
+        else if (e.getSource()==paste)
+        {
+            JOptionPane.showMessageDialog(f,"Paste action performed.\nUse Ctrl+V to paste.");
         }
     }
 
